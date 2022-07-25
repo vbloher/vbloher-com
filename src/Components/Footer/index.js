@@ -9,6 +9,8 @@ const Footer = () => (
     justifyContent="space-between"
     alignItems="center"
     padding={3}
+    marginTop={3}
+    bgcolor="#FBFBFA"
   >
     <Typography variant="body1">vbloher</Typography>
     <SocialLinks />

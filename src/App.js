@@ -1,9 +1,10 @@
 import * as React from "react"
 import Container from "@mui/material/Container"
-import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import Header from "Components/Header"
 import Footer from "Components/Footer"
+import ChainGrid from "Components/ChainGrid"
+import { mainnetChains } from "Data"
 
 export default function App() {
   return (
@@ -13,16 +14,12 @@ export default function App() {
     >
       <Header />
 
-      <Container maxWidth="sm">
-        <Box sx={{ my: 4 }}>
-          <Typography
-            variant="h4"
-            component="h1"
-            gutterBottom
-          >
-            vbloher site
-          </Typography>
-        </Box>
+      <Container maxWidth="lg">
+        <ChainGrid
+          title="Mainnets"
+          subtitle="You can delegate your tokens to our trusted validators in Mainnet."
+          chains={mainnetChains}
+        />
       </Container>
 
       <Footer />

@@ -8,6 +8,8 @@ import theme from "theme"
 const rootElement = document.getElementById("root")
 const root = createRoot(rootElement)
 
+console.log("🎨", theme)
+
 root.render(
   <ThemeProvider theme={theme}>
     <CssBaseline />
