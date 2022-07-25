@@ -1,14 +1,12 @@
 import * as React from "react"
 import { useTheme } from "@mui/material"
 import vbloherLogo from "Assets/img/vbloher.svg"
-import GitHub from "@mui/icons-material/GitHub"
-import Twitter from "@mui/icons-material/Twitter"
 import Box from "@mui/material/Box"
 import AppBar from "@mui/material/AppBar"
 import Toolbar from "@mui/material/Toolbar"
 import IconButton from "@mui/material/IconButton"
 import Typography from "@mui/material/Typography"
-import { links } from "Data"
+import SocialLinks from "Components/SocialLinks"
 
 const Header = () => {
   const theme = useTheme()
@@ -31,21 +29,14 @@ const Header = () => {
               height={theme.spacing(5)}
             />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1 }}
+          >
             vbloher
           </Typography>
-          <IconButton
-            href={links.github}
-            target="_blank"
-          >
-            <GitHub />
-          </IconButton>
-          <IconButton
-            href={links.twitter}
-            target="_blank"
-          >
-            <Twitter />
-          </IconButton>
+          <SocialLinks />
         </Toolbar>
       </AppBar>
     </Box>
