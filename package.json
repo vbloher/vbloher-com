@@ -1,6 +1,6 @@
 {
   "name": "vbloher-com",
-  "version": "5.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -16,6 +16,9 @@
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "latest"
+  },
+  "devDependencies": {
+    "prettier": "2.7.1"
   },
   "browserslist": {
     "production": [
