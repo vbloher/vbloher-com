@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/vbloher-com/static/js/main.3f53f5b5.js",
+    "static/media/kujira.png": "/vbloher-com/static/media/kujira.53883a0d44243062d95c.png",
+    "static/media/mises.jpeg": "/vbloher-com/static/media/mises.7c1c7e2b0185d3f60b88.jpeg",
+    "static/media/galaxy.svg": "/vbloher-com/static/media/galaxy.aec5ea21a6fa5312f1ef4cded02b51f4.svg",
+    "static/media/vbloher.svg": "/vbloher-com/static/media/vbloher.26e9acb504bff1a4be4e16e9d4c1cb38.svg",
+    "static/media/rizon.svg": "/vbloher-com/static/media/rizon.a3c8a32fc6ef51f5df77a33da9a739e3.svg",
+    "static/media/sifchain.svg": "/vbloher-com/static/media/sifchain.8b3a4e41b21a7e5c0a9757bea52d80cf.svg",
+    "static/media/bitcanna.svg": "/vbloher-com/static/media/bitcanna.5a8bacdb1d38169abcb247ba9eaf307b.svg",
+    "static/media/firmachain.svg": "/vbloher-com/static/media/firmachain.8f8c0a4fc02e53dd6b502fde19cb9107.svg",
+    "static/media/kichain.svg": "/vbloher-com/static/media/kichain.5242a58ba9134d6e37da48131cb6fd00.svg",
+    "index.html": "/vbloher-com/index.html",
+    "main.3f53f5b5.js.map": "/vbloher-com/static/js/main.3f53f5b5.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3f53f5b5.js"
+  ]
+}
