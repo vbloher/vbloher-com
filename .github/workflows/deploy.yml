@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+      - uses: actions/checkout@v3
+      
+      - name: set up nodejs
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+          
+      - name: install dependencies
+        run: yarn install --frozen-lockfile
+        
+      - name: build
+        run: yarn build
+        
+      - name: deploy
+        run: yarn deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
