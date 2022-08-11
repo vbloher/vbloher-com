@@ -1,12 +1,15 @@
 {
   "name": "vbloher-com",
   "version": "1.0.0",
+  "homepage": "https://vbloher.github.io/vbloher-com",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "latest",
@@ -18,6 +21,7 @@
     "react-scripts": "latest"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "prettier": "2.7.1"
   },
   "browserslist": {
