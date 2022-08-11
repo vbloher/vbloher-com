@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
+          cache: "yarn"
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -32,6 +32,8 @@ jobs:
         run: yarn install --frozen-lockfile
         
       - name: Deploy
-        run: yarn deploy -- -u "github-actions-bot <support+actions@github.com>"
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          yarn deploy -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
