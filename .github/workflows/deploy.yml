@@ -19,14 +19,19 @@ jobs:
         with:
           node-version: 16
           cache: 'yarn'
-          
+
+      - name: cache dependencies
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
       - name: install dependencies
         run: yarn install --frozen-lockfile
-        
-      - name: build
-        run: yarn build
         
       - name: deploy
         run: yarn deploy
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
