@@ -1,4 +1,4 @@
-name: CI
+name: Build and Deploy
 
 on:
   push:
@@ -11,27 +11,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v3
       
-      - name: set up nodejs
+      - name: Set up nodejs
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'yarn'
 
-      - name: cache dependencies
+      - name: Cache dependencies
         uses: actions/cache@v3
         id: yarn-cache
         with:
           path: |
             **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
-      - name: install dependencies
+      - name: Install dependencies
         run: yarn install --frozen-lockfile
         
-      - name: deploy
-        run: yarn deploy
+      - name: Deploy
+        run: yarn deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
-          GH_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
