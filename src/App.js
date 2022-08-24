@@ -6,6 +6,7 @@ import Footer from "Components/Footer"
 import ChainGrid from "Components/ChainGrid"
 import Achievements from "Components/Achievements"
 import DvsBlock from "Components/DvsBlock"
+import Greeting from "Components/Greeting"
 import { mainnetChains } from "Data"
 
 export default function App() {
@@ -15,6 +16,9 @@ export default function App() {
       flexDirection="column"
     >
       <Header />
+
+      <Greeting />
+
       <Container maxWidth="lg">
         <ChainGrid
           title="Mainnets"
@@ -22,20 +26,11 @@ export default function App() {
           chains={mainnetChains}
         />
 
-        <ChainGrid
-          title="Testnets"
-          chains={mainnetChains}
-        />
-
-        <ChainGrid
-          title="Finished testnets"
-          chains={mainnetChains}
-        />
-
         <Achievements />
 
         <DvsBlock />
       </Container>
+
       <Footer />
     </Box>
   )

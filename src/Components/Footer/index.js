@@ -1,7 +1,6 @@
 import * as React from "react"
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
-import SocialLinks from "Components/SocialLinks"
 import Link from "@mui/material/Link"
 
 const Footer = () => (
@@ -22,7 +21,6 @@ const Footer = () => (
         <Typography>DVS</Typography>
       </Link>
     </Box>
-    <SocialLinks />
   </Box>
 )
 
