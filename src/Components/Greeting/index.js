@@ -1,36 +1,47 @@
 import React from "react"
 import Cactus from "Assets/img/background.jpeg"
-import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
+import Grid from "@mui/material/Grid"
+import Box from "@mui/material/Box"
 
 const Greeting = () => (
-  <Box
-    display="flex"
-    alignItems="center"
-    justifyContent="flex-end"
-    width="100%"
+  <Grid
+    container
     height={600}
     zIndex={-1}
     sx={{
       background: `url(${Cactus})`,
       backgroundSize: "cover",
-      // backgroundRepeat: "no-repeat",
       backgroundPositionY: "-120px",
     }}
   >
-    <Box
-      paddingY={1}
-      paddingLeft={1}
-      paddingRight={5}
-      borderRadius="borderRadius"
+    <Grid
+      item
+      md={4}
+      lg={6}
+    />
+    <Grid
+      item
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      paddingX={2}
+      borderRadius={1}
       sx={{
         backdropFilter: "blur(8px)",
       }}
     >
-      <Typography variant="h2">Hi, I'm vbloher</Typography>
-      <Typography variant="h5">Validator, software engineer, open source contributor</Typography>
-    </Box>
-  </Box>
+      <Typography variant="h1">Hi, I'm vbloher</Typography>
+      <Box
+        component={Typography}
+        variant="h2"
+        paddingY={1}
+      >
+        Trusted Validator
+      </Box>
+      <Typography variant="h5">software engineer, open source contributor</Typography>
+    </Grid>
+  </Grid>
 )
 
 export default Greeting

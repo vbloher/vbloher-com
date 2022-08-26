@@ -20,26 +20,26 @@ export default function App() {
 
       <Greeting />
 
-      <Container maxWidth="lg">
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        width="100%"
+        paddingY={3}
+        bgcolor="#FBFBFA"
+      >
         <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          width="100%"
-          paddingY={3}
-          bgcolor="#FBFBFA"
+          component={Typography}
+          variant="h4"
+          textAlign="center"
+          paddingBottom={2}
         >
-          <Box
-            component={Typography}
-            variant="h4"
-            textAlign="center"
-            paddingBottom={2}
-          >
-            Total amount of staked assets with vbloher:
-          </Box>
-          <Typography variant="h5">300,000$</Typography>
+          Total amount of staked assets with vbloher:
         </Box>
+        <Typography variant="h5">300,000$</Typography>
+      </Box>
 
+      <Container maxWidth="lg">
         <ChainGrid
           title="Mainnets"
           subtitle="You can delegate your tokens to our trusted validators in Mainnet."
