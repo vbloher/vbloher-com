@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/vbloher-com/static/js/main.dd740945.js",
-    "static/media/background.jpeg": "/vbloher-com/static/media/background.759376e3cbd047132c68.jpeg",
-    "static/media/kujira.png": "/vbloher-com/static/media/kujira.53883a0d44243062d95c.png",
-    "static/media/mises.jpeg": "/vbloher-com/static/media/mises.7c1c7e2b0185d3f60b88.jpeg",
-    "static/media/galaxy.svg": "/vbloher-com/static/media/galaxy.aec5ea21a6fa5312f1ef4cded02b51f4.svg",
-    "static/media/vbloher.svg": "/vbloher-com/static/media/vbloher.26e9acb504bff1a4be4e16e9d4c1cb38.svg",
-    "static/media/rizon.svg": "/vbloher-com/static/media/rizon.a3c8a32fc6ef51f5df77a33da9a739e3.svg",
-    "static/media/sifchain.svg": "/vbloher-com/static/media/sifchain.8b3a4e41b21a7e5c0a9757bea52d80cf.svg",
-    "static/media/bitcanna.svg": "/vbloher-com/static/media/bitcanna.5a8bacdb1d38169abcb247ba9eaf307b.svg",
-    "static/media/firmachain.svg": "/vbloher-com/static/media/firmachain.8f8c0a4fc02e53dd6b502fde19cb9107.svg",
-    "static/media/kichain.svg": "/vbloher-com/static/media/kichain.5242a58ba9134d6e37da48131cb6fd00.svg",
-    "index.html": "/vbloher-com/index.html",
-    "static/media/medium.svg": "/vbloher-com/static/media/medium.4342c986f33c356f2e8b4f725dd32c21.svg",
-    "main.dd740945.js.map": "/vbloher-com/static/js/main.dd740945.js.map"
+    "main.js": "./static/js/main.28269d58.js",
+    "static/media/background.jpeg": "./static/media/background.759376e3cbd047132c68.jpeg",
+    "static/media/kujira.png": "./static/media/kujira.53883a0d44243062d95c.png",
+    "static/media/mises.jpeg": "./static/media/mises.7c1c7e2b0185d3f60b88.jpeg",
+    "static/media/galaxy.svg": "./static/media/galaxy.aec5ea21a6fa5312f1ef4cded02b51f4.svg",
+    "static/media/vbloher.svg": "./static/media/vbloher.26e9acb504bff1a4be4e16e9d4c1cb38.svg",
+    "static/media/rizon.svg": "./static/media/rizon.a3c8a32fc6ef51f5df77a33da9a739e3.svg",
+    "static/media/sifchain.svg": "./static/media/sifchain.8b3a4e41b21a7e5c0a9757bea52d80cf.svg",
+    "static/media/bitcanna.svg": "./static/media/bitcanna.5a8bacdb1d38169abcb247ba9eaf307b.svg",
+    "static/media/firmachain.svg": "./static/media/firmachain.8f8c0a4fc02e53dd6b502fde19cb9107.svg",
+    "static/media/kichain.svg": "./static/media/kichain.5242a58ba9134d6e37da48131cb6fd00.svg",
+    "index.html": "./index.html",
+    "static/media/medium.svg": "./static/media/medium.4342c986f33c356f2e8b4f725dd32c21.svg",
+    "main.28269d58.js.map": "./static/js/main.28269d58.js.map"
   },
   "entrypoints": [
-    "static/js/main.dd740945.js"
+    "static/js/main.28269d58.js"
   ]
 }
