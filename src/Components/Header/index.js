@@ -6,23 +6,26 @@ import Toolbar from "@mui/material/Toolbar"
 import IconButton from "@mui/material/IconButton"
 import Typography from "@mui/material/Typography"
 import SocialLinks from "Components/SocialLinks"
+import { Link } from "react-router-dom"
 
 const Header = () => (
   <AppBar position="static">
     <Toolbar>
-      <IconButton
-        size="large"
-        edge="start"
-        color="inherit"
-      >
-        <Box
-          component="img"
-          src={vbloherLogo}
-          alt="Stake with vbloher!"
-          width={40}
-          height={40}
-        />
-      </IconButton>
+      <Link to={"/"}>
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+        >
+          <Box
+            component="img"
+            src={vbloherLogo}
+            alt="Stake with vbloher!"
+            width={40}
+            height={40}
+          />
+        </IconButton>
+      </Link>
       <Typography
         variant="h6"
         component="div"
@@ -31,6 +34,16 @@ const Header = () => (
       >
         vbloher
       </Typography>
+
+      <Box
+        width="100%"
+        paddingLeft={3}
+      >
+        <Link to={"/portfolio"}>
+          <Typography>Portfolio</Typography>
+        </Link>
+      </Box>
+
       <SocialLinks />
     </Toolbar>
   </AppBar>

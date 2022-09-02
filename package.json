@@ -1,7 +1,7 @@
 {
   "name": "vbloher-com",
   "version": "1.0.0",
-  "homepage": "https://vbloher.github.io/vbloher-com",
+  "homepage": ".",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -18,7 +18,8 @@
     "@mui/material": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
