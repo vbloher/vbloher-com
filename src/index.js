@@ -17,7 +17,7 @@ console.log("💻", process.env.PUBLIC_URL)
 root.render(
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <BrowserRouter basemname={`/${process.env.PUBLIC_URL}`}>
+    <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
       <Routes>
         <Route
           path="/"
