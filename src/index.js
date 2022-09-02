@@ -15,7 +15,7 @@ console.log("🎨", theme)
 root.render(
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <BrowserRouter basemname={`/${process.env.PUBLIC_URL}`}>
+    <BrowserRouter basemname={`/${process.env.REACT_APP_PUBLIC_URL}`}>
       <Routes>
         <Route
           path="/"
