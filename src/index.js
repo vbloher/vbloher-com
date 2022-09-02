@@ -12,10 +12,12 @@ const root = createRoot(rootElement)
 
 console.log("🎨", theme)
 
+console.log("💻", process.env.PUBLIC_URL)
+
 root.render(
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <BrowserRouter basemname={`/${process.env.REACT_APP_PUBLIC_URL}`}>
+    <BrowserRouter basemname={`/${process.env.PUBLIC_URL}`}>
       <Routes>
         <Route
           path="/"
