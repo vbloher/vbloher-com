@@ -4,14 +4,15 @@ import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 import Container from "@mui/material/Container"
 import ChainGrid from "Components/ChainGrid"
-import { mainnetChains } from "Data"
+import { mainnetChains } from "Services/data"
 import Achievements from "Components/Achievements"
-import DvsBlock from "Components/DvsBlock"
 import * as React from "react"
+import Advantages from "Components/Advantages"
 
 const Home = () => (
   <MainLayout>
     <Greeting />
+    <Advantages />
     <Box
       display="flex"
       flexDirection="column"
@@ -37,7 +38,6 @@ const Home = () => (
         chains={mainnetChains}
       />
       <Achievements />
-      <DvsBlock />
     </Container>
   </MainLayout>
 )

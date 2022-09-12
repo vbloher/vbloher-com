@@ -18,7 +18,7 @@ const Footer = () => (
         href="https://validators.network/"
         target="_blank"
       >
-        <Typography>DVS</Typography>
+        Distributed Validators Synctems
       </Link>
     </Box>
   </Box>

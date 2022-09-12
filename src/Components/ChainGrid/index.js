@@ -27,11 +27,10 @@ const ChainGrid = ({ title, subtitle, chains }) => (
           lg={3}
         >
           <ChainCard
-            name={chain.name}
             logo={getLogo(chain.name)}
-            apr={chain.apr}
-            commission={chain.commission}
-            explorerLink={chain.explorerLink}
+            name={chain.name}
+            registryName={chain.registryName}
+            valoper={chain.valoper}
             stakeLink={chain.stakeLink}
           />
         </Grid>

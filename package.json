@@ -19,7 +19,8 @@
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "latest",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "axios": "^0.27.2"
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",

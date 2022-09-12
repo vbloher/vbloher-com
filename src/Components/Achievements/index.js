@@ -19,8 +19,16 @@ const Achievements = () => (
       xs={12}
       sm={8}
     >
-      <Typography variant="h3">My achievements</Typography>
-      <Typography variant="subtitle1">
+      <Typography
+        variant="h3"
+        sx={{ paddingBottom: 3 }}
+      >
+        My achievements
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        sx={{ paddingBottom: 2 }}
+      >
         I have successfully passed the school of validators. Now I participate in the development of the school and
         support of the validator community.
       </Typography>
@@ -29,7 +37,7 @@ const Achievements = () => (
         href="https://github.com/Distributed-Validators-Synctems/Validator-School"
         target="_blank"
       >
-        Join the Validator School
+        Join the Validator School >>>
       </Link>
     </Grid>
     <Grid item>

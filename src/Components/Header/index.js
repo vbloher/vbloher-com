@@ -35,14 +35,14 @@ const Header = () => (
         vbloher
       </Typography>
 
-      <Box
-        width="100%"
-        paddingLeft={3}
-      >
-        <Link to={"/portfolio"}>
-          <Typography>Portfolio</Typography>
-        </Link>
-      </Box>
+      {/*<Box*/}
+      {/*  component={Link}*/}
+      {/*  width="100%"*/}
+      {/*  paddingLeft={3}*/}
+      {/*  to={"/portfolio"}*/}
+      {/*>*/}
+      {/*  <Typography>Portfolio</Typography>*/}
+      {/*</Box>*/}
 
       <SocialLinks />
     </Toolbar>
