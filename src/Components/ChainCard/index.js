@@ -6,6 +6,8 @@ import { useEffect, useState } from "react"
 import { getNominalApr } from "Services/chain"
 import { getCommissionRate } from "Services/validator"
 
+const RESTAKE_URL_PREFIX = "https://restake.app"
+
 const ChainCard = ({ logo, name, registryName, valoper, stakeLink }) => {
   const [nominalApr, setNominalApr] = useState(Number.NaN)
   const [commission, setCommission] = useState(Number.NaN)
@@ -62,7 +64,7 @@ const ChainCard = ({ logo, name, registryName, valoper, stakeLink }) => {
       <Box display="flex">
         <Button
           variant="outlined"
-          href={stakeLink}
+          href={`${RESTAKE_URL_PREFIX}/${registryName}/${valoper}`}
           target="_blank"
         >
           Stake!
