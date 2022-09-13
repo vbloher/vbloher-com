@@ -3,14 +3,18 @@ import Button from "@mui/material/Button"
 import Box from "@mui/material/Box"
 import Paper from "@mui/material/Paper"
 import { useEffect, useState } from "react"
-import { getNominalApr } from "Services/chain"
-import { getCommissionRate } from "Services/validator"
+import { getNominalApr, getValidatorInfo } from "Services/chainApi"
+import * as ChainLogos from "Components/Logo"
 
 const RESTAKE_URL_PREFIX = "https://restake.app"
 
-const ChainCard = ({ logo, name, registryName, valoper, stakeLink }) => {
+const getLogo = (chainName) => ChainLogos[chainName]
+
+const ChainCard = ({ chain: { name, registryName, valoper, exponent } }) => {
   const [nominalApr, setNominalApr] = useState(Number.NaN)
   const [commission, setCommission] = useState(Number.NaN)
+  const [bondedTokens, setBondedTokens] = useState(Number.NaN)
+  const logo = getLogo(name)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,11 +26,12 @@ const ChainCard = ({ logo, name, registryName, valoper, stakeLink }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const commission = await getCommissionRate(registryName, valoper)
-      setCommission(commission)
+      const validatorInfo = await getValidatorInfo(registryName, valoper, exponent)
+      setCommission(validatorInfo.commissionRate)
+      setBondedTokens(validatorInfo.bondedTokens)
     }
     fetchData().catch(console.error)
-  }, [registryName, valoper, setCommission])
+  }, [registryName, valoper, setCommission, setBondedTokens])
 
   return (
     <Box
@@ -60,6 +65,7 @@ const ChainCard = ({ logo, name, registryName, valoper, stakeLink }) => {
         </Typography>
         <Typography>{`APR: ~${nominalApr}%`}</Typography>
         <Typography>{`Commission: ${commission}%`}</Typography>
+        <Typography>{`Voting power: ${bondedTokens}`}</Typography>
       </Box>
       <Box display="flex">
         <Button

@@ -3,9 +3,6 @@ import Grid from "@mui/material/Grid"
 import ChainCard from "Components/ChainCard"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
-import * as ChainLogos from "Components/Logo"
-
-const getLogo = (chainName) => ChainLogos[chainName]
 
 const ChainGrid = ({ title, subtitle, chains }) => (
   <Box>
@@ -26,13 +23,7 @@ const ChainGrid = ({ title, subtitle, chains }) => (
           md={4}
           lg={3}
         >
-          <ChainCard
-            logo={getLogo(chain.name)}
-            name={chain.name}
-            registryName={chain.registryName}
-            valoper={chain.valoper}
-            stakeLink={chain.stakeLink}
-          />
+          <ChainCard chain={chain} />
         </Grid>
       ))}
     </Grid>

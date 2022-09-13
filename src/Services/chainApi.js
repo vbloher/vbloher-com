@@ -72,4 +72,17 @@ const getActualApr = async (chainName) => {
   return Math.round(actualApr * 100)
 }
 
-export { getNominalApr, getActualApr }
+const getValidatorInfo = async (chainName, valoper, exponent) => {
+  const api = getAxios(chainName)
+
+  const response = await api.get(`/cosmos/staking/v1beta1/validators/${valoper}`)
+  const commissionRate = Number(response.data.validator.commission.commission_rates.rate) * 100
+  const bondedTokens = Number(response.data.validator.tokens) / exponent
+
+  return {
+    commissionRate,
+    bondedTokens,
+  }
+}
+
+export { getNominalApr, getActualApr, getValidatorInfo }
