@@ -10,7 +10,7 @@ const StakedFundsCounter = () => {
 
   const stakedComponent =
     totalStaked !== null ? (
-      <Typography variant="h3">${totalStaked.toLocaleString()}$</Typography>
+      <Typography variant="h3">${totalStaked.toLocaleString()}</Typography>
     ) : (
       <CircularProgress size={48} />
     )
