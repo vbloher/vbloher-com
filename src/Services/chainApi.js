@@ -1,6 +1,26 @@
-import getAxios from "Services/axios"
+import axios from "axios"
 
 const YEAR_MILLIS = 31536000000
+
+const axiosMap = {}
+
+const getAxios = (chainName) => {
+  if (axiosMap[chainName]) {
+    return axiosMap[chainName]
+  } else {
+    const chainAxios = axios.create({
+      baseURL: `https://rest.cosmos.directory/${chainName}`,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        Accept: "application/json",
+      },
+      timeout: 5000,
+    })
+    axiosMap[chainName] = chainAxios
+
+    return chainAxios
+  }
+}
 
 const getChainParams = async (api) => {
   let response
@@ -77,7 +97,9 @@ const getValidatorInfo = async (chainName, valoper, exponent) => {
 
   const response = await api.get(`/cosmos/staking/v1beta1/validators/${valoper}`)
   const commissionRate = Number(response.data.validator.commission.commission_rates.rate) * 100
-  const bondedTokens = Number(response.data.validator.tokens) / exponent
+  const bondedTokens = Number(response.data.validator.tokens) / Math.pow(10, exponent)
+
+  console.log(chainName, ": ", bondedTokens)
 
   return {
     commissionRate,

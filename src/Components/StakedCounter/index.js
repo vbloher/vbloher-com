@@ -2,27 +2,14 @@ import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 import * as React from "react"
 import { useEffect, useState } from "react"
-import { mainnetChains } from "Services/data"
-import { getValidatorInfo } from "Services/chainApi"
-import { getPrice } from "Services/coingeckoApi"
+import getTotalStaked from "Services/api"
 
 const StakedFundsCounter = () => {
   const [totalStaked, setTotalStaked] = useState(Number.NaN)
 
   useEffect(() => {
     const fetchData = async () => {
-      const results = await Promise.all(
-        mainnetChains.map(async (chain) => {
-          const validatorInfo = await getValidatorInfo(chain.registryName, chain.valoper, chain.exponent)
-          const bondedTokens = validatorInfo.bondedTokens
-          const price = chain.coinId ? await getPrice(chain.coinId) : 0
-
-          console.log("coin: ", chain.coinId, "; tokens: ", bondedTokens, "; price: ", price)
-
-          return bondedTokens * price
-        })
-      )
-      const staked = Math.round(results.reduce((prev, curr) => prev + curr))
+      const staked = await getTotalStaked()
       setTotalStaked(staked)
     }
     fetchData().catch(console.error)

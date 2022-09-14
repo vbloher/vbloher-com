@@ -25,7 +25,7 @@ export const mainnetChains = [
     registryName: "sifchain",
     valoper: "sifvaloper1tvy5apxqsf3jf0uhzknvj6qndy473smzjezvh9",
     coinId: "sifchain",
-    exponent: 12,
+    exponent: 18,
   },
   {
     name: "FirmaChain",
