@@ -3,9 +3,17 @@ import Typography from "@mui/material/Typography"
 import * as React from "react"
 import { useEffect, useState } from "react"
 import getTotalStaked from "Services/api"
+import { CircularProgress } from "@mui/material"
 
 const StakedFundsCounter = () => {
-  const [totalStaked, setTotalStaked] = useState(Number.NaN)
+  const [totalStaked, setTotalStaked] = useState(null)
+
+  const stakedComponent =
+    totalStaked !== null ? (
+      <Typography variant="h3">${totalStaked.toLocaleString()}$</Typography>
+    ) : (
+      <CircularProgress size={48} />
+    )
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +29,7 @@ const StakedFundsCounter = () => {
       flexDirection="column"
       alignItems="center"
       width="100%"
-      paddingY={3}
+      paddingY={7}
       bgcolor="#FBFBFA"
     >
       <Box
@@ -32,7 +40,7 @@ const StakedFundsCounter = () => {
       >
         Total amount of staked assets with vbloher:
       </Box>
-      <Typography variant="h5">{totalStaked}$</Typography>
+      {stakedComponent}
     </Box>
   )
 }
