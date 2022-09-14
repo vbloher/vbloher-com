@@ -1,6 +1,7 @@
 {
   "name": "vbloher-com",
   "version": "1.0.0",
+  "homepage": "https://vbloher.com",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
