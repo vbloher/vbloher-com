@@ -17,8 +17,8 @@ const Home = () => (
         subtitle="You can delegate your tokens to our trusted validators in Mainnet."
         chains={mainnetChains}
       />
-      <Achievements />
     </Container>
+    <Achievements />
   </MainLayout>
 )
 

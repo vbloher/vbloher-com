@@ -9,8 +9,8 @@ const Footer = () => (
     justifyContent="space-between"
     alignItems="center"
     padding={3}
-    marginTop={3}
     bgcolor="#FBFBFA"
+    sx={{ boxShadow: 3 }}
   >
     <Box display="flex">
       <Typography variant="body1">vbloher |&nbsp;</Typography>
