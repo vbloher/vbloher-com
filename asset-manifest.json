@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/vbloher-com/static/js/main.056b55ae.js",
+    "main.js": "/vbloher-com/static/js/main.3c0c200c.js",
     "static/media/background.jpeg": "/vbloher-com/static/media/background.759376e3cbd047132c68.jpeg",
     "static/media/passage.png": "/vbloher-com/static/media/passage.579cf833e8a577eca81f.png",
     "static/media/kujira.png": "/vbloher-com/static/media/kujira.53883a0d44243062d95c.png",
@@ -14,9 +14,9 @@
     "static/media/kichain.svg": "/vbloher-com/static/media/kichain.5242a58ba9134d6e37da48131cb6fd00.svg",
     "index.html": "/vbloher-com/index.html",
     "static/media/medium.svg": "/vbloher-com/static/media/medium.4342c986f33c356f2e8b4f725dd32c21.svg",
-    "main.056b55ae.js.map": "/vbloher-com/static/js/main.056b55ae.js.map"
+    "main.3c0c200c.js.map": "/vbloher-com/static/js/main.3c0c200c.js.map"
   },
   "entrypoints": [
-    "static/js/main.056b55ae.js"
+    "static/js/main.3c0c200c.js"
   ]
 }
