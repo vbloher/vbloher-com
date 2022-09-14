@@ -3,7 +3,8 @@ import Button from "@mui/material/Button"
 import Box from "@mui/material/Box"
 import Paper from "@mui/material/Paper"
 import { useEffect, useState } from "react"
-import { getNominalApr, getValidatorInfo } from "Services/chainApi"
+import { getNominalApr } from "Services/chainApi"
+import { CircularProgress } from "@mui/material"
 import * as ChainLogos from "Components/Logo"
 
 const RESTAKE_URL_PREFIX = "https://restake.app"
@@ -11,10 +12,9 @@ const RESTAKE_URL_PREFIX = "https://restake.app"
 const getLogo = (chainName) => ChainLogos[chainName]
 
 const ChainCard = ({ chain: { name, registryName, valoper, exponent } }) => {
-  const [nominalApr, setNominalApr] = useState(Number.NaN)
-  const [commission, setCommission] = useState(Number.NaN)
-  const [bondedTokens, setBondedTokens] = useState(Number.NaN)
+  const [nominalApr, setNominalApr] = useState(null)
   const logo = getLogo(name)
+  const apr = nominalApr != null ? `~${nominalApr}%` : <CircularProgress size="1rem" />
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,15 +23,6 @@ const ChainCard = ({ chain: { name, registryName, valoper, exponent } }) => {
     }
     fetchData().catch(console.error)
   }, [registryName, setNominalApr, getNominalApr])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const validatorInfo = await getValidatorInfo(registryName, valoper, exponent)
-      setCommission(validatorInfo.commissionRate)
-      setBondedTokens(validatorInfo.bondedTokens)
-    }
-    fetchData().catch(console.error)
-  }, [registryName, valoper, setCommission, setBondedTokens])
 
   return (
     <Box
@@ -63,15 +54,24 @@ const ChainCard = ({ chain: { name, registryName, valoper, exponent } }) => {
         >
           {name}
         </Typography>
-        <Typography>{`APR: ~${nominalApr}%`}</Typography>
-        <Typography>{`Commission: ${commission}%`}</Typography>
-        <Typography>{`Voting power: ${bondedTokens}`}</Typography>
+        <Box
+          component={Typography}
+          variant="body1"
+          paddingTop={1}
+          alignItems="center"
+        >
+          {`APR: `}
+          {apr}
+        </Box>
       </Box>
       <Box display="flex">
         <Button
           variant="outlined"
           href={`${RESTAKE_URL_PREFIX}/${registryName}/${valoper}`}
           target="_blank"
+          sx={{
+            textTransform: "none",
+          }}
         >
           Stake!
         </Button>
