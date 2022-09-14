@@ -39,7 +39,6 @@ const Greeting = () => (
       >
         Trusted Validator
       </Box>
-      <Typography variant="h5">software engineer, open source contributor</Typography>
     </Grid>
   </Grid>
 )
