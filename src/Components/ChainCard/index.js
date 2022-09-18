@@ -49,7 +49,7 @@ const ChainCard = ({ chain: { name, registryName, valoper, apr: chainApr } }) =>
         src={logo}
         height={80}
         width={80}
-        borderRadius={theme.shape.borderRadius}
+        borderRadius={`${theme.shape.borderRadius}px`}
         marginRight={2}
       />
       <Box

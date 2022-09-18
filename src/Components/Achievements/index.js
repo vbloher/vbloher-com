@@ -59,7 +59,7 @@ const Achievements = () => {
               src={"https://r.mobirisesite.com/161869/assets/images/first-flow-gif.gif?v=1NEFty"}
               height={300}
               width={300}
-              borderRadius={theme.shape.borderRadius}
+              borderRadius={`${theme.shape.borderRadius}px`}
               alignSelf="right"
             />
           </Grid>
