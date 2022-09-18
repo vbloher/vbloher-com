@@ -60,10 +60,17 @@ export const mainnetChains = [
     valoper: "pasgvaloper1xp70wy9t4cqal2guacy7n8tmjf7avz8yz95kpn",
     exponent: 6,
   },
-  // {
-  //   name: "Mises",
-  //   valoper: "",
-  //   registryName: "",
-  //   stakeLink: "https://gw.mises.site/validators",
-  // },
+  {
+    name: "Rebus",
+    registryName: undefined,
+    valoper: "rebusvaloper1kc5qhsmzxy69hsmz6zkp3emaytfdewur4g50yl",
+    exponent: 18,
+    stakeLink: "https://explorer.nodestake.top/rebus/staking/rebusvaloper1kc5qhsmzxy69hsmz6zkp3emaytfdewur4g50yl",
+  },
+  {
+    name: "Mises",
+    valoper: "misesvaloper1uwkdx83hxkd46ak0tc4npq3hj50p9xpvx9424s",
+    registryName: undefined,
+    stakeLink: "https://gw.mises.site/validators/misesvaloper1uwkdx83hxkd46ak0tc4npq3hj50p9xpvx9424s",
+  },
 ]
