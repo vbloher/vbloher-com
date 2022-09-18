@@ -1,18 +1,36 @@
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import Box from "@mui/material/Box"
-import Paper from "@mui/material/Paper"
 import { useEffect, useState } from "react"
 import { getNominalApr } from "Services/chainApi"
-import { CircularProgress } from "@mui/material"
+import { CircularProgress, useTheme } from "@mui/material"
 import * as ChainLogos from "Components/Logo"
+import { makeStyles } from "@mui/styles"
 
 const RESTAKE_URL_PREFIX = "https://restake.app"
+
+const useStyles = makeStyles((theme) => ({
+  card: {
+    display: "flex",
+    alignItems: "center",
+    padding: theme.spacing(2),
+    transition: theme.transitions.create("all"),
+    boxShadow: theme.shadows[2],
+    borderRadius: theme.shape.borderRadius,
+
+    "&:hover": {
+      transform: "scale(1.05)",
+      boxShadow: theme.shadows[4],
+    },
+  },
+}))
 
 const getLogo = (chainName) => ChainLogos[chainName]
 
 const ChainCard = ({ chain: { name, registryName, valoper, exponent } }) => {
   const [nominalApr, setNominalApr] = useState(null)
+  const classes = useStyles()
+  const theme = useTheme()
   const logo = getLogo(name)
   const apr = nominalApr != null ? `~${nominalApr}%` : <CircularProgress size="1rem" />
 
@@ -25,26 +43,19 @@ const ChainCard = ({ chain: { name, registryName, valoper, exponent } }) => {
   }, [registryName, setNominalApr, getNominalApr])
 
   return (
-    <Box
-      component={Paper}
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      padding={3}
-      elevation={3}
-    >
+    <Box className={classes.card}>
       <Box
         component="img"
         src={logo}
-        height={120}
-        width={120}
-        borderRadius={1}
+        height={80}
+        width={80}
+        borderRadius={theme.shape.borderRadius}
+        marginRight={2}
       />
       <Box
         display="flex"
         flexDirection="column"
-        alignItems="center"
-        paddingY={2}
+        width="100%"
       >
         <Typography
           variant="h5"
@@ -56,15 +67,14 @@ const ChainCard = ({ chain: { name, registryName, valoper, exponent } }) => {
         </Typography>
         <Box
           component={Typography}
-          variant="body1"
-          paddingTop={1}
+          variant="h6"
           alignItems="center"
+          paddingY={1}
+          color={theme.palette.success.dark}
         >
           {`APR: `}
           {apr}
         </Box>
-      </Box>
-      <Box display="flex">
         <Button
           variant="outlined"
           href={`${RESTAKE_URL_PREFIX}/${registryName}/${valoper}`}
