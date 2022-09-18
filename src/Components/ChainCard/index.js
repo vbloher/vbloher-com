@@ -27,12 +27,14 @@ const useStyles = makeStyles((theme) => ({
 
 const getLogo = (chainName) => ChainLogos[chainName]
 
-const ChainCard = ({ chain: { name, registryName, valoper, apr: chainApr } }) => {
+const ChainCard = ({ chain: { name, registryName, valoper, apr: chainApr, stakeLink } }) => {
   const [nominalApr, setNominalApr] = useState(chainApr)
   const classes = useStyles()
   const theme = useTheme()
+
   const logo = getLogo(name)
   const apr = nominalApr ? `~${nominalApr}%` : <CircularProgress size="1rem" />
+  const link = stakeLink ? stakeLink : `${RESTAKE_URL_PREFIX}/${registryName}/${valoper}`
 
   useEffect(() => {
     const fetchData = async () => {
@@ -77,7 +79,7 @@ const ChainCard = ({ chain: { name, registryName, valoper, apr: chainApr } }) =>
         </Box>
         <Button
           variant="outlined"
-          href={`${RESTAKE_URL_PREFIX}/${registryName}/${valoper}`}
+          href={link}
           target="_blank"
           sx={{
             textTransform: "none",
