@@ -10,7 +10,7 @@ import { makeStyles } from "@mui/styles"
 import IconButton from "@mui/material/IconButton"
 
 const useStyles = makeStyles((theme) => ({
-  helpIcon: {
+  helpIconButton: {
     marginLeft: theme.spacing(1),
     opacity: 0.3,
     transition: theme.transitions.create("opacity"),
@@ -37,7 +37,7 @@ const StakedFundsCounter = () => {
       const staked = await getTotalStaked()
       setTotalStaked(staked)
     }
-    fetchData().catch(console.error)
+    fetchData().catch((error) => console.error("Can't get total staked amount"))
   }, [setTotalStaked])
 
   return (
@@ -62,7 +62,7 @@ const StakedFundsCounter = () => {
       >
         {stakedComponent}
         <Tooltip title="*prices by CoinGecko">
-          <IconButton classesName={classes.helpIcon}>
+          <IconButton className={classes.helpIconButton}>
             <HelpOutlineIcon />
           </IconButton>
         </Tooltip>

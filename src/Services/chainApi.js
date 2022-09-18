@@ -75,9 +75,14 @@ const calculateRealAPR = (params, nominalApr, blocksYearReal) => {
 }
 
 const getNominalApr = async (chainName) => {
-  const api = getAxios(chainName)
-  const params = await getChainParams(api)
-  const nominalApr = calculateNominalAPR(params)
+  let nominalApr = 0
+  try {
+    const api = getAxios(chainName)
+    const params = await getChainParams(api)
+    nominalApr = calculateNominalAPR(params)
+  } catch (e) {
+    console.warn("Cant get nominal APR for ", chainName)
+  }
 
   return Math.round(nominalApr * 100)
 }
@@ -95,11 +100,15 @@ const getActualApr = async (chainName) => {
 const getValidatorInfo = async (chainName, valoper, exponent) => {
   const api = getAxios(chainName)
 
-  const response = await api.get(`/cosmos/staking/v1beta1/validators/${valoper}`)
-  const commissionRate = Number(response.data.validator.commission.commission_rates.rate) * 100
-  const bondedTokens = Number(response.data.validator.tokens) / Math.pow(10, exponent)
-
-  console.log(chainName, ": ", bondedTokens)
+  let commissionRate = 0
+  let bondedTokens = 0
+  try {
+    const response = await api.get(`/cosmos/staking/v1beta1/validators/${valoper}`)
+    commissionRate = Number(response.data.validator.commission.commission_rates.rate) * 100
+    bondedTokens = Number(response.data.validator.tokens) / Math.pow(10, exponent)
+  } catch (e) {
+    console.warn("Can't get validator info for ", chainName)
+  }
 
   return {
     commissionRate,

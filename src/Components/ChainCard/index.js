@@ -33,15 +33,17 @@ const ChainCard = ({ chain: { name, registryName, valoper, apr: chainApr, stakeL
   const theme = useTheme()
 
   const logo = getLogo(name)
-  const apr = nominalApr ? `~${nominalApr}%` : <CircularProgress size="1rem" />
+  const apr = nominalApr !== undefined ? `~${nominalApr}%` : <CircularProgress size="1rem" />
   const link = stakeLink ? stakeLink : `${RESTAKE_URL_PREFIX}/${registryName}/${valoper}`
 
   useEffect(() => {
     const fetchData = async () => {
-      const nominalApr = await getNominalApr(registryName)
-      setNominalApr(nominalApr)
+      if (registryName && !chainApr) {
+        const nominalApr = await getNominalApr(registryName)
+        setNominalApr(nominalApr)
+      }
     }
-    fetchData().catch(console.error)
+    fetchData().catch((error) => console.error("Can't get APR for ", name))
   }, [registryName, setNominalApr, getNominalApr])
 
   return (

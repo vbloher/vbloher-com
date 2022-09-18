@@ -5,7 +5,9 @@ import { getPrice } from "Services/coingeckoApi"
 const getTotalStaked = async () => {
   const results = await Promise.all(
     mainnetChains.map(async (chain) => {
-      const validatorInfo = await getValidatorInfo(chain.registryName, chain.valoper, chain.exponent)
+      const validatorInfo = chain.registryName
+        ? await getValidatorInfo(chain.registryName, chain.valoper, chain.exponent)
+        : { bondedTokens: 0 }
       const bondedTokens = validatorInfo.bondedTokens
       const price = chain.coinId ? await getPrice(chain.coinId) : 0
       return bondedTokens * price
