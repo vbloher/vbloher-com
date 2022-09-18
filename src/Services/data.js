@@ -39,6 +39,7 @@ export const mainnetChains = [
     registryName: "galaxy",
     valoper: "galaxyvaloper173mgkdad6f935ys7gd2yfj6z47khkwy6f9ce7n",
     exponent: 6,
+    apr: 156,
   },
   {
     name: "Chronic",

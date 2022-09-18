@@ -27,12 +27,12 @@ const useStyles = makeStyles((theme) => ({
 
 const getLogo = (chainName) => ChainLogos[chainName]
 
-const ChainCard = ({ chain: { name, registryName, valoper, exponent } }) => {
-  const [nominalApr, setNominalApr] = useState(null)
+const ChainCard = ({ chain: { name, registryName, valoper, apr: chainApr } }) => {
+  const [nominalApr, setNominalApr] = useState(chainApr)
   const classes = useStyles()
   const theme = useTheme()
   const logo = getLogo(name)
-  const apr = nominalApr != null ? `~${nominalApr}%` : <CircularProgress size="1rem" />
+  const apr = nominalApr ? `~${nominalApr}%` : <CircularProgress size="1rem" />
 
   useEffect(() => {
     const fetchData = async () => {
