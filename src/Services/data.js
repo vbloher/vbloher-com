@@ -41,7 +41,7 @@ export const mainnetChains = [
     exponent: 6,
   },
   {
-    name: "ChronicNetwork",
+    name: "Chronic",
     registryName: "chronicnetwork",
     valoper: "chronicvaloper1rwyn6w46u3067enhpdceqasg2um8dddtp9v3kx",
     exponent: 6,
