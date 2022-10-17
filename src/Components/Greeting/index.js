@@ -27,7 +27,6 @@ const Greeting = () => (
       justifyContent="center"
       paddingX={2}
       borderRadius={1}
-      xs={4}
       sx={{
         backdropFilter: "blur(8px)",
       }}
