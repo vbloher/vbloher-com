@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.f4939eef.js",
+    "main.js": "/static/js/main.8b9d0595.js",
     "static/media/background.jpeg": "/static/media/background.759376e3cbd047132c68.jpeg",
     "static/media/rebus.png": "/static/media/rebus.b4a3c6b441d0c834e68f.png",
     "static/media/passage.png": "/static/media/passage.579cf833e8a577eca81f.png",
@@ -15,9 +15,9 @@
     "static/media/firmachain.svg": "/static/media/firmachain.8f8c0a4fc02e53dd6b502fde19cb9107.svg",
     "static/media/kichain.svg": "/static/media/kichain.5242a58ba9134d6e37da48131cb6fd00.svg",
     "static/media/medium.svg": "/static/media/medium.4342c986f33c356f2e8b4f725dd32c21.svg",
-    "main.f4939eef.js.map": "/static/js/main.f4939eef.js.map"
+    "main.8b9d0595.js.map": "/static/js/main.8b9d0595.js.map"
   },
   "entrypoints": [
-    "static/js/main.f4939eef.js"
+    "static/js/main.8b9d0595.js"
   ]
 }
