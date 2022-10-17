@@ -22,9 +22,7 @@ const Home = () => (
           paddingBottom={3}
         >
           <Typography variant="h3">Networks</Typography>
-          <Typography variant="h5">
-            You can delegate your tokens with auto compound feature with my validators
-          </Typography>
+          <Typography variant="h5">Find the list of supported networks</Typography>
         </Box>
         <Grid
           container

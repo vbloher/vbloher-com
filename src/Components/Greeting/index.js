@@ -27,17 +27,25 @@ const Greeting = () => (
       justifyContent="center"
       paddingX={2}
       borderRadius={1}
+      xs={4}
       sx={{
         backdropFilter: "blur(8px)",
       }}
     >
       <Typography variant="h1">Hi, I'm vbloher</Typography>
+      {/*<Box*/}
+      {/*  component={Typography}*/}
+      {/*  variant="h2"*/}
+      {/*  paddingY={1}*/}
+      {/*>*/}
+      {/*  Trusted Validator*/}
+      {/*</Box>*/}
       <Box
         component={Typography}
-        variant="h2"
+        variant="h5"
         paddingY={1}
       >
-        Trusted Validator
+        Stake and earn via non-custodial staking with trusted validator
       </Box>
     </Grid>
   </Grid>
