@@ -13,7 +13,15 @@ const Footer = () => (
     sx={{ boxShadow: 3 }}
   >
     <Box display="flex">
-      <Typography variant="body1">vbloher |&nbsp;</Typography>
+      <Link href="https://vbloher.com/">vbloher</Link>
+      <Typography variant="body1">&nbsp;|&nbsp;</Typography>
+      <Link
+        href="https://nodejumper.io/"
+        target="_blank"
+      >
+        Nodejumper
+      </Link>
+      <Typography variant="body1">&nbsp;|&nbsp;</Typography>
       <Link
         href="https://validators.network/"
         target="_blank"
