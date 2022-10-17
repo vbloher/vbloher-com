@@ -35,12 +35,6 @@ export const mainnetChains = [
     apr: 156,
   },
   {
-    name: "Chronic",
-    registryName: "chronicnetwork",
-    valoper: "chronicvaloper1rwyn6w46u3067enhpdceqasg2um8dddtp9v3kx",
-    exponent: 6,
-  },
-  {
     name: "Kujira",
     registryName: "kujira",
     valoper: "kujiravaloper1yafsywsluqdvlhtp30tcdhw496vg6ey3zs4u84",
@@ -55,7 +49,7 @@ export const mainnetChains = [
   },
   {
     name: "Rebus",
-    registryName: undefined,
+    registryName: "rebus",
     valoper: "rebusvaloper1kc5qhsmzxy69hsmz6zkp3emaytfdewur4g50yl",
     exponent: 18,
     stakeLink: "https://explorer.nodestake.top/rebus/staking/rebusvaloper1kc5qhsmzxy69hsmz6zkp3emaytfdewur4g50yl",

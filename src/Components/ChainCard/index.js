@@ -108,6 +108,7 @@ const ChainCard = ({ chain: { name, registryName, valoper, apr: chainApr, stakeL
             sx={{
               textTransform: "none",
             }}
+            className={classes.blabla}
           >
             Stake!
           </Button>
