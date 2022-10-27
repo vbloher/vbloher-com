@@ -1,25 +1,14 @@
+// EXAMPLE
+//
+// {
+//   name: "Galaxy",
+//   registryName: "galaxy",
+//   valoper: "galaxyvaloper173mgkdad6f935ys7gd2yfj6z47khkwy6f9ce7n",
+//   exponent: 6,
+//   apr: 156,
+// }
+
 export const mainnetChains = [
-  {
-    name: "Rizon",
-    registryName: "rizon",
-    valoper: "rizonvaloper1h7qgg8p52vdpcqzhxrt6wjsnyyfasaak588lrh",
-    coinId: "rizon",
-    exponent: 6,
-  },
-  {
-    name: "KiChain",
-    registryName: "kichain",
-    valoper: "kivaloper1ggrrt80qln07kqnfe5zppjgsrrqmkc4jpwvsgh",
-    coinId: "ki",
-    exponent: 6,
-  },
-  {
-    name: "BitCanna",
-    registryName: "bitcanna",
-    valoper: "bcnavaloper19l7slf3853c9ul0vf24zefjvdq4l8930nulqp4",
-    coinId: "bitcanna",
-    exponent: 6,
-  },
   {
     name: "FirmaChain",
     registryName: "firmachain",
